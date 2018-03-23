@@ -1,0 +1,20 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DO STUFF</title>
+</head>
+<body>
+  <form method="POST" action='/task'>
+    <input name="task" type="text"></input>
+    <input type='submit' value="create">
+  </form>
+    <ul>
+    <% tasks.forEach(function(task) { %>
+      <li>
+      <%= task.task %>
+      <%= task.createdAt %>
+      </li>
+    <% }) %>
+    </ul>
+</body>
+</html>
