@@ -4,6 +4,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const taskController = require('../testDB/taskController.js');
 const path = require('path');
+const fs = require('fs');
+
 
 app.set('view engine', 'ejs');
 
@@ -22,3 +24,10 @@ app.post('/task', taskController.createTask, taskController.writeToFile, (req, r
 
 
 app.listen(8888);
+
+
+// 
+// fs.writeFile('../testWrite.json','hello world!!!', (err) => {
+//   if (err) console.log('ERR');
+//   process._rawDebug('write done');
+// })
