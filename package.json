@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon testServer/server.js",
-    "test": "node testServer/server.js"
+    "test": "node testServer/server.js",
+    "asyncHook": "node ../alpha/async_perf_hooks.js"
   },
   "author": "",
   "license": "ISC",

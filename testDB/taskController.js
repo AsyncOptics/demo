@@ -4,14 +4,13 @@ const fs = require('fs');
 const taskController = {};
 
 taskController.createTask = function(req, res, next) {
-	console.log(req.body)
 	Task.create({
 		task: req.body.task
 	}, (err, task) => {
 		if (err) console.log(err);
 		res.locals.newTask = task
 		next();
-	}); 
+	});
 };
 
 taskController.writeToFile = function(req, res, next) {
