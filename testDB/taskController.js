@@ -4,6 +4,7 @@ const fs = require('fs');
 const taskController = {};
 
 taskController.createTask = function(req, res, next) {
+	// console.log(req.body);
 	Task.create({
 		task: req.body.task
 	}, (err, task) => {
@@ -16,9 +17,8 @@ taskController.createTask = function(req, res, next) {
 taskController.writeToFile = function(req, res, next) {
 	fs.writeFile('testWrite.json', JSON.stringify(res.locals.newTask), (err) => {
   	if (err) console.log('ERR');
-  	process._rawDebug('write done');
-  	next()
-	})
+	});
+	next();
 }
 
 taskController.findTasks = function(req, res, next) {
