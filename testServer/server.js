@@ -1,7 +1,11 @@
-require('../../alpha/async_perf_hooks.js');
+const {asyncMonitor, pkgMonitor} = require('../../alpha/index.js');
 const path = require('path');
-const {pkgMonitor} = require('../../alpha/packageMonitor.js');
+
+asyncMonitor(3000);
 pkgMonitor(path.join(__dirname, '../package.json'));
+
+
+
 
 const express = require('express');
 const app = express();
