@@ -1,12 +1,14 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>DO STUFF</title>
+  <title>TO DO LIST</title>
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
 </head>
 <body>
+  <h1>TO DO LIST</h1>
   <form method="POST" action='/task'>
-    <input name="task" type="text"></input>
-    <input type='submit' value="create">
+    <input id="task" name="task" type="text"></input>
+    <input id="submit" type='submit' value="submit">
   </form>
     <ul>
     <% tasks.forEach(function(task) { %>

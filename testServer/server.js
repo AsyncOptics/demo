@@ -17,10 +17,14 @@ const fs = require('fs');
 app.set('view engine', 'ejs');
 
 app.use( (req, res, next) => {
-  // process._rawDebug(req.method, req.url);
+  process._rawDebug(req.method, req.url);
   next();
 })
 // app.use(bodyParser.json({ type: 'application/json' }));
+
+app.get('/css/styles.css', (req, res) => {
+  res.sendFile(path.join(__dirname,'./..'+req.url));
+})
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', taskController.findTasks, (req, res) => {
